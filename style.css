@@ -1,0 +1,438 @@
+@charset "UTF-8";
+
+/* !reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* popup */
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.popup h2 {
+    font: bold 25px/1 "돋움";
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup p {
+    font: 18px/1.5 "돋움";
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup .close {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* !layout wrapping */
+.wrap {
+    display: flex;
+    width: 100%;
+    height: 850px;
+}
+
+/* header */
+header {
+    width: 200px;
+    height: 100%;
+    position: relative;
+    border-bottom: 1px solid #000;
+}
+
+header>h1 {
+    width: 100%;
+    position: absolute;
+    left: 30px;
+}
+
+#gnb {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+}
+
+#gnb>ul>li>a {
+    display: block;
+    width: 100%;
+    padding: 7px 5px;
+    font: bold 15px/1 "Arial";
+    color: #333;
+    border-bottom: 1px solid #000;
+}
+
+#gnb>ul>li:hover>a {
+    background-color: #333;
+    color: #fff;
+}
+
+.sub {
+    display: none;
+}
+
+.sub>li {
+    width: 100%;
+    padding: 3px 0;
+}
+
+.sub>li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sub>li>a {
+    display: block;
+    width: 100%;
+    color: #333;
+    font: 13px/1 "돋움";
+    padding-left: 7px;
+}
+
+#gnb p {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#gnb p>a {
+    width: 100%;
+    font: 13px/1 "Arial";
+    text-align: center;
+}
+
+#gnb p>a:nth-child(1)::after {
+    content: "|";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* main */
+main {
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+/** slide **/
+#slide {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slidebox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    border: 1px solid #000;
+    z-index: 1;
+}
+
+.slidebox>ul {
+    width: 100%;
+}
+
+.slidebox>ul>li {
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.slidebox>ul>li:nth-of-type(1)>a {
+    width: 50px;
+    height: 50px;
+    background-image: url(./images/shortcut.png);
+    background-position: 0 0;
+    background-size: 350px;
+}
+
+.slidebox>ul>li:nth-of-type(2)>a {
+    width: 50px;
+    height: 50px;
+    background-image: url(./images/shortcut.png);
+    background-position: 50px 50px;
+    background-size: 350px;
+}
+
+.slidebox>ul>li:nth-of-type(3)>a {
+    width: 50px;
+    height: 50px;
+    background-image: url(./images/shortcut.png);
+    background-position: 110px 0;
+    background-size: 350px;
+}
+
+.slidebox>ul>li>a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #f8f8f8;
+    font: 14px/1 "돋움";
+    padding: 3px 0;
+    color: #333;
+}
+
+#slide .frame {
+    height: 1200px;
+    position: relative;
+}
+
+#slide .frame li {
+    width: 100%;
+    height: 400px;
+}
+
+#slide .frame li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/** banner **/
+#banner {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    border: 1px solid #000;
+}
+
+#banner .icon {
+    position: relative;
+    flex: 1;
+    border-right: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .icon img {
+    width: 80%;
+    height: 60px;
+    object-fit: cover;
+}
+
+#banner .detail {
+    flex: 3;
+    border-right: 1px solid #000;
+    padding: 40px;
+}
+
+#banner .detail h2 {
+    font: bold 20px/1 "돋움";
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#banner .detail p {
+    font: 15px/1 "돋움";
+    color: #333;
+}
+
+#banner .next {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner .next a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-right: 7px solid #000;
+    border-bottom: 7px solid #000;
+    border-radius: 5px;
+    transform: translateX(-8px) rotateZ(-45deg);
+}
+
+/** tab menu **/
+#tabMenu {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+}
+
+.wrap main #tabMenu>ul {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+#tabMenu>ul>li {
+    width: 100px;
+    background-color: #333;
+}
+
+#tabMenu>ul>li>a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font: 14px/1 "돋움";
+    border: 1px solid #333;
+    border-bottom: none;
+}
+
+#tabMenu>ul>li.on {
+    background-color: #fff;
+    margin-bottom: -4px;
+}
+
+#tabMenu>ul>li.on>a {
+    color: #333;
+}
+
+#tabMenu .content {
+    width: 100%;
+    height: calc(100% - 40px);
+    position: relative;
+}
+
+#tabMenu .content div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+#tabMenu .content div.on {
+    opacity: 1;
+    z-index: 2;
+}
+
+#notice {
+    width: 100%;
+    height: 100%;
+}
+
+#notice>ul {
+    width: 100%;
+}
+
+#notice>ul>li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+#notice>ul>li:nth-child(even) {
+    background-color: #0002;
+}
+
+#notice>ul>li:hover {
+    background-color: #0004;
+}
+
+#notice>ul>li>a {
+    width: 1100px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#notice>ul>li>span {
+    padding-right: 15px
+}
+
+#gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* footer */
+footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+.logo-footer {
+    width: 200px;
+}
+
+.logo-footer>h2 {
+    line-height: 100px;
+}
+
+.copyright {
+    flex: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright p {
+    font: bold 15px/1 "돋움";
+    color: #333;
+    text-align: center;
+}
+
+.sns {
+    flex: 1;
+    display: flex;
+}
+
+.sns>li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.sns>li>a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    border-radius: 9px;
+    box-shadow: 0 -5px 5px #e5e2e2 inset;
+}
+*/
